@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
+import { Sparkle, RetroFlower, Daisy, CrossStar, Flower4 } from "@/components/Deco";
 
 export default function Footer() {
   return (
-    <footer className="bg-[hsl(280,30%,12%)] border-t-[3px] border-[hsl(280,30%,12%)]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <footer className="bg-[hsl(280,30%,12%)] border-t-[3px] border-[hsl(280,30%,12%)] relative overflow-hidden">
+      {/* Deco */}
+      <Sparkle size={80} color="#FAEF5D" className="absolute top-4 right-10 opacity-10 spin-slow" />
+      <RetroFlower size={100} color="#C084FC" centerColor="#FAEF5D" className="absolute -bottom-8 left-4 opacity-10" />
+      <Flower4 size={60} color="#F472B6" className="absolute top-8 left-1/2 opacity-8 spin-slow" style={{ animationDuration: "15s" }} />
+      <CrossStar size={40} color="#FAEF5D" className="absolute bottom-8 right-1/3 opacity-10 spin-slow" />
+      <Daisy size={50} className="absolute top-6 right-1/4 opacity-8" />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 relative">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -75,6 +82,12 @@ export default function Footer() {
           <p className="font-body text-xs text-white/30 uppercase tracking-widest">
             Все права защищены
           </p>
+          <div className="flex items-center gap-3">
+            <Sparkle size={16} color="#FAEF5D" />
+            <RetroFlower size={16} color="#F472B6" centerColor="#FAEF5D" />
+            <CrossStar size={16} color="#C084FC" />
+            <Sparkle size={16} color="#FAEF5D" />
+          </div>
         </div>
       </div>
     </footer>

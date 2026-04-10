@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import ContactModal from "@/components/ContactModal";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
+import { Flower4, Sparkle, CrossStar, RetroFlower, Asterisk, Daisy, Dot } from "@/components/Deco";
 
 const affirmations = [
   "Я наполнена любовью и светом каждый день",
@@ -92,9 +93,15 @@ export default function Index() {
     <Layout>
       {/* HERO */}
       <section className="relative bg-[hsl(275,52%,75%)] overflow-hidden border-b-[3px] border-[hsl(280,30%,12%)]">
-        <div className="absolute top-8 right-8 w-32 h-32 bg-[hsl(54,95%,58%)] blob opacity-80 border-2 border-[hsl(280,30%,12%)]" />
-        <div className="absolute bottom-12 left-12 w-20 h-20 bg-[hsl(330,75%,78%)] blob opacity-70 border-2 border-[hsl(280,30%,12%)]" />
-        <div className="absolute top-1/2 right-1/4 w-10 h-10 bg-white blob opacity-40" />
+        {/* Deco elements */}
+        <Sparkle size={80} color="#FAEF5D" className="absolute top-8 right-16 opacity-90 float" />
+        <RetroFlower size={64} color="#F472B6" centerColor="#FAEF5D" className="absolute top-20 right-6 opacity-70" />
+        <Flower4 size={56} color="white" className="absolute bottom-10 left-10 opacity-30 spin-slow" />
+        <Asterisk size={44} color="#FAEF5D" className="absolute top-1/3 right-1/3 opacity-40 spin-slow" />
+        <CrossStar size={36} color="#F472B6" className="absolute bottom-16 right-24 opacity-50 float" />
+        <Dot size={18} color="#FAEF5D" className="absolute top-12 left-1/3 opacity-60" />
+        <Dot size={12} color="white" className="absolute top-1/4 left-1/4 opacity-40" />
+        <Dot size={24} color="#F472B6" className="absolute bottom-8 left-1/3 opacity-50" />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28 relative">
           <div className="max-w-3xl">
@@ -163,8 +170,12 @@ export default function Index() {
       </section>
 
       {/* AFFIRMATION OF THE DAY */}
-      <section className="px-4 sm:px-6 py-16 bg-[hsl(54,95%,58%)] border-b-[3px] border-[hsl(280,30%,12%)]">
-        <div className="max-w-3xl mx-auto text-center">
+      <section className="px-4 sm:px-6 py-16 bg-[hsl(54,95%,58%)] border-b-[3px] border-[hsl(280,30%,12%)] relative overflow-hidden">
+        <RetroFlower size={80} color="#F472B6" centerColor="#FAEF5D" className="absolute -left-6 top-4 opacity-30" />
+        <Flower4 size={60} color="#C084FC" className="absolute -right-4 bottom-4 opacity-25" />
+        <Sparkle size={32} color="#FB923C" className="absolute right-16 top-6 opacity-40 spin-slow" />
+        <Dot size={16} color="#F472B6" className="absolute left-1/4 bottom-6 opacity-50" />
+        <div className="max-w-3xl mx-auto text-center relative">
           <p className="font-display font-black text-xs uppercase tracking-[0.2em] text-[hsl(280,30%,12%)] mb-4">
             ♡ Аффирмация дня ♡
           </p>
@@ -186,8 +197,12 @@ export default function Index() {
       </section>
 
       {/* SECTIONS GRID */}
-      <section className="px-4 sm:px-6 py-16 bg-white border-b-[3px] border-[hsl(280,30%,12%)]">
-        <div className="max-w-6xl mx-auto">
+      <section className="px-4 sm:px-6 py-16 bg-white border-b-[3px] border-[hsl(280,30%,12%)] relative overflow-hidden">
+        <Daisy size={70} className="absolute top-6 right-8 opacity-15" />
+        <CrossStar size={50} color="#C084FC" className="absolute bottom-8 left-6 opacity-20 spin-slow" />
+        <Dot size={20} color="#F472B6" className="absolute top-12 left-12 opacity-30" />
+        <Dot size={14} color="#FAEF5D" className="absolute bottom-12 right-20 opacity-40" />
+        <div className="max-w-6xl mx-auto relative">
           <div className="text-center mb-12">
             <h2 className="font-display font-black text-3xl md:text-5xl text-[hsl(280,30%,12%)] uppercase mb-2">
               Что вас ждёт
@@ -224,8 +239,11 @@ export default function Index() {
       </section>
 
       {/* BLOG */}
-      <section className="px-4 sm:px-6 py-16 bg-[hsl(280,40%,97%)] border-b-[3px] border-[hsl(280,30%,12%)]">
-        <div className="max-w-6xl mx-auto">
+      <section className="px-4 sm:px-6 py-16 bg-[hsl(280,40%,97%)] border-b-[3px] border-[hsl(280,30%,12%)] relative overflow-hidden">
+        <Asterisk size={60} color="#C084FC" className="absolute -right-4 top-8 opacity-15 spin-slow" />
+        <RetroFlower size={50} color="#FAEF5D" centerColor="white" className="absolute left-4 bottom-6 opacity-20" />
+        <Dot size={16} color="#F472B6" className="absolute right-1/3 top-8 opacity-30" />
+        <div className="max-w-6xl mx-auto relative">
           <div className="flex items-end justify-between mb-10">
             <div>
               <h2 className="font-display font-black text-3xl md:text-4xl text-[hsl(280,30%,12%)] uppercase">
@@ -263,10 +281,15 @@ export default function Index() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 py-16 bg-[hsl(330,75%,78%)] border-b-[3px] border-[hsl(280,30%,12%)]">
+      <section className="px-4 sm:px-6 py-16 bg-[hsl(330,75%,78%)] border-b-[3px] border-[hsl(280,30%,12%)] relative overflow-hidden">
+        <Sparkle size={90} color="#FAEF5D" className="absolute -left-8 top-4 opacity-40 float" />
+        <Flower4 size={70} color="white" className="absolute -right-6 bottom-2 opacity-20 spin-slow" />
+        <Daisy size={55} className="absolute right-16 top-6 opacity-25" />
+        <CrossStar size={30} color="#C084FC" className="absolute left-20 bottom-8 opacity-40 spin-slow" />
+        <Dot size={20} color="#FAEF5D" className="absolute right-1/4 bottom-10 opacity-50" />
         <div className="max-w-3xl mx-auto text-center relative">
-          <div className="absolute -top-6 left-8 w-16 h-16 bg-[hsl(54,95%,58%)] blob border-2 border-[hsl(280,30%,12%)] float" />
-          <div className="absolute -top-4 right-8 w-10 h-10 bg-[hsl(275,52%,75%)] blob border-2 border-[hsl(280,30%,12%)] float" style={{ animationDelay: "1s" }} />
+          <Sparkle size={44} color="#FAEF5D" className="absolute -top-10 left-8 opacity-70 float" />
+          <Flower4 size={36} color="white" className="absolute -top-8 right-8 opacity-60 float" />
 
           <div className="bg-white border-[3px] border-[hsl(280,30%,12%)] rounded-3xl p-10 md:p-14 shadow-[8px_8px_0px_hsl(280,30%,12%)]">
             <p className="font-display font-black text-xs uppercase tracking-[0.2em] text-[hsl(275,52%,75%)] mb-3">

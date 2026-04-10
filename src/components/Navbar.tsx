@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Icon from "@/components/ui/icon";
+import { Sparkle, RetroFlower } from "@/components/Deco";
 
 const navLinks = [
   { label: "Главная", path: "/" },
@@ -20,8 +21,11 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 bg-[hsl(275,52%,75%)] rounded-full border-2 border-[hsl(280,30%,12%)] flex items-center justify-center font-black text-sm text-white shadow-[2px_2px_0px_hsl(280,30%,12%)]">
-              DP
+            <div className="relative w-9 h-9">
+              <div className="w-9 h-9 bg-[hsl(275,52%,75%)] rounded-full border-2 border-[hsl(280,30%,12%)] flex items-center justify-center font-black text-sm text-white shadow-[2px_2px_0px_hsl(280,30%,12%)]">
+                DP
+              </div>
+              <Sparkle size={14} color="#FAEF5D" className="absolute -top-1 -right-1" />
             </div>
             <div className="leading-tight">
               <span className="font-display font-black text-sm uppercase tracking-tight text-[hsl(280,30%,12%)] block">
