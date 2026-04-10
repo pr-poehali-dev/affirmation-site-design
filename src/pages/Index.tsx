@@ -20,6 +20,7 @@ const sections = [
     path: "/affirmations",
     colorClass: "from-purple-100 to-purple-50",
     badge: "Создать свою",
+    flower: "🌸",
   },
   {
     icon: "Heart",
@@ -28,6 +29,7 @@ const sections = [
     path: "/prayers",
     colorClass: "from-yellow-100 to-amber-50",
     badge: "Полная версия",
+    flower: "🌺",
   },
   {
     icon: "Leaf",
@@ -36,6 +38,7 @@ const sections = [
     path: "/practices",
     colorClass: "from-purple-50 to-yellow-50",
     badge: "Популярное",
+    flower: "🌷",
   },
 ];
 
@@ -60,6 +63,18 @@ const blogPosts = [
   },
 ];
 
+/* Falling petals config */
+const petals = [
+  { emoji: "🌸", left: "8%", delay: "0s", duration: "8s", size: "1.4rem" },
+  { emoji: "🌺", left: "18%", delay: "1.5s", duration: "10s", size: "1rem" },
+  { emoji: "✿", left: "30%", delay: "3s", duration: "7s", size: "1.2rem" },
+  { emoji: "🌸", left: "45%", delay: "0.8s", duration: "11s", size: "0.9rem" },
+  { emoji: "🌷", left: "58%", delay: "2.2s", duration: "9s", size: "1.3rem" },
+  { emoji: "🌼", left: "70%", delay: "4s", duration: "8.5s", size: "1rem" },
+  { emoji: "🌸", left: "82%", delay: "1s", duration: "12s", size: "1.1rem" },
+  { emoji: "✿", left: "92%", delay: "3.5s", duration: "7.5s", size: "0.8rem" },
+];
+
 export default function Index() {
   const [contactOpen, setContactOpen] = useState(false);
   const [affirmationIndex, setAffirmationIndex] = useState(0);
@@ -76,18 +91,47 @@ export default function Index() {
         <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-purple-200/30 blur-3xl" />
         <div className="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-yellow-200/30 blur-3xl" />
 
+        {/* Falling petals */}
+        {petals.map((p, i) => (
+          <span
+            key={i}
+            className="flower-deco petal"
+            style={{
+              left: p.left,
+              top: "-30px",
+              fontSize: p.size,
+              animationDelay: p.delay,
+              animationDuration: p.duration,
+            }}
+          >
+            {p.emoji}
+          </span>
+        ))}
+
+        {/* Static decorative flowers in corners */}
+        <span className="flower-deco text-4xl left-6 top-24 opacity-25 flower-sway" style={{ animationDuration: "4s" }}>🌸</span>
+        <span className="flower-deco text-3xl right-8 top-20 opacity-20 flower-sway" style={{ animationDuration: "5s", animationDelay: "1s" }}>🌺</span>
+        <span className="flower-deco text-2xl left-16 bottom-16 opacity-20 flower-sway" style={{ animationDuration: "6s", animationDelay: "0.5s" }}>🌷</span>
+        <span className="flower-deco text-3xl right-16 bottom-12 opacity-25 flower-sway" style={{ animationDuration: "4.5s", animationDelay: "2s" }}>🌼</span>
+
         <div className="relative max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm border border-border rounded-full px-4 py-1.5 mb-6">
-            <span className="text-primary text-sm">✦</span>
+            <span className="text-base">🌸</span>
             <span className="text-sm text-foreground/70 font-medium">Место для внутреннего света</span>
+            <span className="text-base">🌸</span>
           </div>
 
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">
             <span className="text-foreground">Найди </span>
             <span className="text-gradient">гармонию</span>
             <br />
             <span className="text-foreground">внутри себя</span>
           </h1>
+
+          {/* Princess subtitle */}
+          <p className="logo-text text-2xl md:text-3xl text-primary/70 mb-4 italic">
+            ✿ Дорогая принцесса ✿
+          </p>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
             Аффирмации, молитвы и практики для тех, кто ищет покой, силу и радость в повседневной жизни
@@ -99,7 +143,7 @@ export default function Index() {
               size="lg"
               className="rounded-full bg-primary hover:bg-primary/90 text-white px-8 py-3 text-base font-medium shadow-lg shadow-primary/20"
             >
-              <Link to="/affirmations">Начать практику</Link>
+              <Link to="/affirmations">🌸 Начать практику</Link>
             </Button>
             <Button
               variant="outline"
@@ -113,18 +157,26 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Flower divider */}
+      <div className="flex items-center justify-center gap-3 text-2xl py-2 opacity-50">
+        🌸 🌺 🌷 🌼 🌸 🌺 🌷 🌼 🌸
+      </div>
+
       {/* Daily Affirmation */}
       <section className="px-4 sm:px-6 py-12">
         <div className="max-w-3xl mx-auto">
-          <div className="relative gradient-card rounded-3xl border border-border p-8 md:p-12 text-center glow-purple">
-            <div className="absolute top-4 left-4 text-purple-300/50 font-serif text-6xl">"</div>
-            <div className="absolute bottom-4 right-4 text-yellow-300/50 font-serif text-6xl rotate-180">"</div>
+          <div className="relative gradient-card rounded-3xl border border-border p-8 md:p-12 text-center glow-purple overflow-hidden">
+            {/* flower corners */}
+            <span className="absolute top-3 left-4 text-3xl opacity-20">🌸</span>
+            <span className="absolute top-3 right-4 text-3xl opacity-20">🌸</span>
+            <span className="absolute bottom-3 left-4 text-2xl opacity-15">🌷</span>
+            <span className="absolute bottom-3 right-4 text-2xl opacity-15">🌷</span>
 
             <p className="text-sm text-muted-foreground mb-4 uppercase tracking-widest font-medium">
-              Аффирмация дня
+              🌼 Аффирмация дня 🌼
             </p>
             <p className="font-serif text-2xl md:text-3xl text-foreground leading-relaxed italic mb-6 px-4">
-              {featuredAffirmations[affirmationIndex]}
+              "{featuredAffirmations[affirmationIndex]}"
             </p>
             <button
               onClick={nextAffirmation}
@@ -154,11 +206,16 @@ export default function Index() {
               <Link
                 key={section.path}
                 to={section.path}
-                className={`group relative rounded-3xl bg-gradient-to-br ${section.colorClass} border border-border p-8 card-hover block`}
+                className={`group relative rounded-3xl bg-gradient-to-br ${section.colorClass} border border-border p-8 card-hover block overflow-hidden`}
               >
+                {/* Background flower */}
+                <span className="absolute -bottom-2 -right-2 text-6xl opacity-10 group-hover:opacity-20 transition-opacity duration-300 group-hover:scale-110 transform">
+                  {section.flower}
+                </span>
+
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded-2xl bg-white/70 flex items-center justify-center">
-                    <Icon name={section.icon as "Sparkles"} size={22} className="text-primary" />
+                  <div className="w-12 h-12 rounded-2xl bg-white/70 flex items-center justify-center text-2xl">
+                    {section.flower}
                   </div>
                   <span className="text-xs font-medium bg-white/60 text-primary px-3 py-1 rounded-full border border-white/80">
                     {section.badge}
@@ -174,6 +231,17 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Flower divider 2 */}
+      <div className="flex items-center justify-center gap-4 py-4 opacity-30">
+        <div className="h-px flex-1 max-w-32 bg-border" />
+        <span className="text-xl">🌸</span>
+        <span className="text-base">✿</span>
+        <span className="text-xl">🌺</span>
+        <span className="text-base">✿</span>
+        <span className="text-xl">🌸</span>
+        <div className="h-px flex-1 max-w-32 bg-border" />
+      </div>
 
       {/* Blog preview */}
       <section className="px-4 sm:px-6 py-16">
@@ -192,7 +260,8 @@ export default function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {blogPosts.map((post, i) => (
-              <Link to="/blog" key={i} className="group bg-white/70 rounded-2xl border border-border p-6 card-hover block">
+              <Link to="/blog" key={i} className="group bg-white/70 rounded-2xl border border-border p-6 card-hover block relative overflow-hidden">
+                <span className="absolute -top-1 -right-1 text-3xl opacity-10 group-hover:opacity-20 transition-opacity">🌸</span>
                 <span className="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
                   {post.tag}
                 </span>
@@ -216,11 +285,18 @@ export default function Index() {
       {/* CTA */}
       <section className="px-4 sm:px-6 py-16">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="rounded-3xl bg-gradient-to-br from-purple-100 to-yellow-100 border border-border p-10 md:p-14">
-            <p className="text-4xl mb-4">✦</p>
+          <div className="rounded-3xl bg-gradient-to-br from-purple-100 to-yellow-100 border border-border p-10 md:p-14 relative overflow-hidden">
+            {/* Flower decorations */}
+            <span className="absolute top-4 left-6 text-4xl opacity-20">🌸</span>
+            <span className="absolute top-6 right-6 text-3xl opacity-15">🌺</span>
+            <span className="absolute bottom-4 left-10 text-2xl opacity-15">🌷</span>
+            <span className="absolute bottom-6 right-8 text-3xl opacity-20">🌼</span>
+
+            <p className="text-5xl mb-4">🌸</p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
               Готовы начать свой путь?
             </h2>
+            <p className="logo-text text-xl text-primary/60 italic mb-3">Дорогая принцесса, ты этого достойна</p>
             <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
               Присоединяйтесь к тысячам людей, которые находят покой и силу через ежедневные практики
             </p>
@@ -229,7 +305,7 @@ export default function Index() {
               className="rounded-full bg-primary hover:bg-primary/90 text-white px-8 font-medium shadow-lg shadow-primary/20"
               onClick={() => setContactOpen(true)}
             >
-              Связаться с нами
+              🌸 Связаться с нами
             </Button>
           </div>
         </div>

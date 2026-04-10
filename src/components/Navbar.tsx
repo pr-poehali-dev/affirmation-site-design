@@ -16,14 +16,15 @@ export default function Navbar() {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-md border-b border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-white text-sm">✦</span>
+          <Link to="/" className="flex items-center gap-2 group">
+            <span className="text-xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">🌸</span>
+            <div className="flex flex-col leading-none">
+              <span className="logo-text text-xl font-semibold text-primary tracking-wide">Дорогая принцесса</span>
+              <span className="text-[10px] text-muted-foreground tracking-[0.15em] uppercase font-light -mt-0.5">Dear Princess</span>
             </div>
-            <span className="font-serif text-lg font-semibold text-primary">Свет Внутри</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-1">
