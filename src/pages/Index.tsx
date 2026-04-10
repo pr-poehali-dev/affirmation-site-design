@@ -206,6 +206,39 @@ export default function Index() {
         </div>
       </section>
 
+      {/* NEW PAGES PROMO */}
+      <section className="px-4 sm:px-6 py-12 bg-[hsl(280,40%,97%)] border-b-[3px] border-[hsl(280,30%,12%)] relative overflow-hidden">
+        <Sparkle size={50} color="#C084FC" className="absolute top-4 right-6 opacity-20 spin-slow" />
+        <div className="max-w-6xl mx-auto relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <Link to="/gratitude-prayer" className="group bg-[hsl(275,52%,75%)] border-[3px] border-[hsl(280,30%,12%)] rounded-3xl p-6 card-pop block">
+              <div className="text-3xl mb-2">🙏</div>
+              <h3 className="font-display italic font-bold text-2xl text-white mb-1">Молитва благодарности</h3>
+              <p className="font-body text-sm text-white/80">Практика Луизы Хей на каждое утро</p>
+              <div className="mt-4 flex items-center gap-1 font-body font-extrabold text-sm uppercase tracking-wide text-white group-hover:gap-3 transition-all">
+                Читать <Icon name="ArrowRight" size={14} />
+              </div>
+            </Link>
+            <Link to="/joy-list" className="group bg-[hsl(54,95%,58%)] border-[3px] border-[hsl(280,30%,12%)] rounded-3xl p-6 card-pop block">
+              <div className="text-3xl mb-2">✨</div>
+              <h3 className="font-display italic font-bold text-2xl text-[hsl(280,30%,12%)] mb-1">Список радостей</h3>
+              <p className="font-body text-sm text-[hsl(280,30%,30%)]">Замечай маленькие радости каждый день</p>
+              <div className="mt-4 flex items-center gap-1 font-body font-extrabold text-sm uppercase tracking-wide text-[hsl(280,30%,12%)] group-hover:gap-3 transition-all">
+                Открыть <Icon name="ArrowRight" size={14} />
+              </div>
+            </Link>
+            <Link to="/soap-masterclass" className="group bg-[hsl(330,75%,78%)] border-[3px] border-[hsl(280,30%,12%)] rounded-3xl p-6 card-pop block">
+              <div className="text-3xl mb-2">🧼</div>
+              <h3 className="font-display italic font-bold text-2xl text-white mb-1">Мастер-класс</h3>
+              <p className="font-body text-sm text-white/80">Мыло с люфой и кофейный скраб своими руками</p>
+              <div className="mt-4 flex items-center gap-1 font-body font-extrabold text-sm uppercase tracking-wide text-white group-hover:gap-3 transition-all">
+                Подробнее <Icon name="ArrowRight" size={14} />
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* AFFIRMATION OF THE DAY */}
       <section className="px-4 sm:px-6 py-16 bg-[hsl(54,95%,58%)] border-b-[3px] border-[hsl(280,30%,12%)] relative overflow-hidden">
         <RetroFlower size={80} color="#F472B6" centerColor="#FAEF5D" className="absolute -left-6 top-4 opacity-30" />

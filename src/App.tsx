@@ -10,6 +10,9 @@ import Prayers from "./pages/Prayers";
 import Practices from "./pages/Practices";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
+import GratitudePrayer from "./pages/GratitudePrayer";
+import JoyList from "./pages/JoyList";
+import SoapMasterclass from "./pages/SoapMasterclass";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +30,9 @@ const App = () => (
           <Route path="/practices" element={<Practices />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/gratitude-prayer" element={<GratitudePrayer />} />
+          <Route path="/joy-list" element={<JoyList />} />
+          <Route path="/soap-masterclass" element={<SoapMasterclass />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
