@@ -16,14 +16,18 @@ export default function Navbar() {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b-[3px] border-[hsl(280,30%,12%)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 group">
-            <span className="text-xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">🌸</span>
-            <div className="flex flex-col leading-none">
-              <span className="logo-text text-xl font-semibold text-primary tracking-wide">Дорогая принцесса</span>
-              <span className="text-[10px] text-muted-foreground tracking-[0.15em] uppercase font-light -mt-0.5">Dear Princess</span>
+            <div className="w-9 h-9 bg-[hsl(275,52%,75%)] rounded-full border-2 border-[hsl(280,30%,12%)] flex items-center justify-center font-black text-sm text-white shadow-[2px_2px_0px_hsl(280,30%,12%)]">
+              DP
+            </div>
+            <div className="leading-tight">
+              <span className="font-display font-black text-sm uppercase tracking-tight text-[hsl(280,30%,12%)] block">
+                Дорогая <span className="text-[hsl(275,52%,75%)]">принцесса</span>
+              </span>
+              <span className="text-[10px] font-body text-[hsl(275,15%,50%)] uppercase tracking-[0.15em] block">Dear Princess</span>
             </div>
           </Link>
 
@@ -32,10 +36,10 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                className={`px-3 py-1.5 rounded-full text-[11px] font-extrabold uppercase tracking-wide transition-all duration-150 border-2 ${
                   location.pathname === link.path
-                    ? "bg-primary text-primary-foreground"
-                    : "text-foreground/70 hover:text-foreground hover:bg-muted"
+                    ? "bg-[hsl(275,52%,75%)] text-white border-[hsl(280,30%,12%)] shadow-[2px_2px_0px_hsl(280,30%,12%)]"
+                    : "border-transparent text-[hsl(280,30%,12%)] hover:border-[hsl(280,30%,12%)] hover:bg-[hsl(54,95%,58%)]"
                 }`}
               >
                 {link.label}
@@ -44,7 +48,7 @@ export default function Navbar() {
           </div>
 
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+            className="md:hidden p-2 rounded-xl border-2 border-[hsl(280,30%,12%)] hover:bg-[hsl(54,95%,58%)] transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
             <Icon name={isOpen ? "X" : "Menu"} size={20} />
@@ -52,16 +56,16 @@ export default function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="md:hidden pb-4 flex flex-col gap-1">
+          <div className="md:hidden pb-4 flex flex-col gap-1 border-t-2 border-[hsl(280,30%,12%)] pt-3">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-4 py-2.5 rounded-xl text-sm font-extrabold uppercase tracking-wide transition-all duration-150 border-2 ${
                   location.pathname === link.path
-                    ? "bg-primary text-primary-foreground"
-                    : "text-foreground/70 hover:text-foreground hover:bg-muted"
+                    ? "bg-[hsl(275,52%,75%)] text-white border-[hsl(280,30%,12%)]"
+                    : "border-transparent text-[hsl(280,30%,12%)] hover:bg-[hsl(54,95%,58%)] hover:border-[hsl(280,30%,12%)]"
                 }`}
               >
                 {link.label}

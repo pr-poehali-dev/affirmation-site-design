@@ -2,33 +2,33 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-border mt-24 relative overflow-hidden">
-      {/* Decorative flowers */}
-      <span className="flower-deco left-4 top-4 opacity-20 text-3xl">🌸</span>
-      <span className="flower-deco right-8 top-6 opacity-15 text-2xl">🌺</span>
-      <span className="flower-deco left-1/3 -top-2 opacity-10 text-4xl">🌷</span>
-      <span className="flower-deco right-1/4 top-8 opacity-10 text-xl">✿</span>
-
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 relative">
+    <footer className="bg-[hsl(280,30%,12%)] border-t-[3px] border-[hsl(280,30%,12%)]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-xl">🌸</span>
-              <div className="flex flex-col leading-none">
-                <span className="logo-text text-lg font-semibold text-primary">Дорогая принцесса</span>
-                <span className="text-[9px] text-muted-foreground tracking-[0.15em] uppercase font-light">Dear Princess</span>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-9 h-9 bg-[hsl(275,52%,75%)] rounded-full border-2 border-white flex items-center justify-center font-black text-sm text-white shadow-[2px_2px_0px_white]">
+                DP
+              </div>
+              <div className="leading-tight">
+                <span className="font-display font-black text-sm uppercase text-white block">
+                  Дорогая <span className="text-[hsl(275,52%,75%)]">принцесса</span>
+                </span>
+                <span className="text-[10px] font-body text-white/40 uppercase tracking-[0.15em] block">Dear Princess</span>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="font-body text-sm text-white/60 leading-relaxed">
               Место для внутренней силы, гармонии и духовного роста через аффирмации, молитвы и практики.
             </p>
-            <div className="flex gap-2 mt-4 text-lg">
-              <span>🌸</span><span>🌺</span><span>🌷</span><span>🌼</span>
+            <div className="flex gap-2 mt-4">
+              <span className="w-7 h-7 bg-[hsl(275,52%,75%)] border-2 border-white rounded-full flex items-center justify-center text-xs font-black text-white">✦</span>
+              <span className="w-7 h-7 bg-[hsl(330,75%,78%)] border-2 border-white rounded-full flex items-center justify-center text-xs font-black text-white">♡</span>
+              <span className="w-7 h-7 bg-[hsl(54,95%,58%)] border-2 border-white rounded-full flex items-center justify-center text-xs font-black text-[hsl(280,30%,12%)]">❋</span>
             </div>
           </div>
 
           <div>
-            <h4 className="font-serif font-semibold text-foreground mb-3">Разделы</h4>
+            <h4 className="font-display font-black text-xs uppercase tracking-widest text-white mb-4">Разделы</h4>
             <ul className="space-y-2">
               {[
                 { label: "Аффирмации", path: "/affirmations" },
@@ -37,7 +37,10 @@ export default function Footer() {
                 { label: "Блог", path: "/blog" },
               ].map((link) => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Link
+                    to={link.path}
+                    className="font-body text-sm text-white/60 hover:text-[hsl(54,95%,58%)] transition-colors font-semibold uppercase tracking-wide"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -46,14 +49,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-serif font-semibold text-foreground mb-3">Информация</h4>
+            <h4 className="font-display font-black text-xs uppercase tracking-widest text-white mb-4">Информация</h4>
             <ul className="space-y-2">
               {[
                 { label: "О проекте", path: "/about" },
                 { label: "Контакты", path: "/about#contact" },
               ].map((link) => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Link
+                    to={link.path}
+                    className="font-body text-sm text-white/60 hover:text-[hsl(54,95%,58%)] transition-colors font-semibold uppercase tracking-wide"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -62,8 +68,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-6 text-center">
-          <p className="text-xs text-muted-foreground">© 2024 Дорогая принцесса · Dear Princess 🌸 Все права защищены.</p>
+        <div className="border-t border-white/10 mt-8 pt-6 flex flex-col md:flex-row items-center justify-between gap-2">
+          <p className="font-body text-xs text-white/40 uppercase tracking-widest">
+            © 2024 Дорогая принцесса · Dear Princess
+          </p>
+          <p className="font-body text-xs text-white/30 uppercase tracking-widest">
+            Все права защищены
+          </p>
         </div>
       </div>
     </footer>
