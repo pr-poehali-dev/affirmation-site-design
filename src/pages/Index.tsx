@@ -103,42 +103,79 @@ export default function Index() {
         <Dot size={12} color="white" className="absolute top-1/4 left-1/4 opacity-40" />
         <Dot size={24} color="#F472B6" className="absolute bottom-8 left-1/3 opacity-50" />
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28 relative">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-[hsl(54,95%,58%)] border-2 border-[hsl(280,30%,12%)] rounded-full px-5 py-2 mb-6 shadow-[3px_3px_0px_hsl(280,30%,12%)]">
-              <span className="font-body font-extrabold text-sm uppercase tracking-widest text-[hsl(280,30%,12%)]">
-                ✦ Место для внутреннего света ✦
-              </span>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            {/* Text */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-[hsl(54,95%,58%)] border-2 border-[hsl(280,30%,12%)] rounded-full px-5 py-2 mb-6 shadow-[3px_3px_0px_hsl(280,30%,12%)]">
+                <span className="font-body font-extrabold text-sm uppercase tracking-widest text-[hsl(280,30%,12%)]">
+                  ✦ Место для внутреннего света ✦
+                </span>
+              </div>
+
+              <h1 className="font-display italic font-bold text-6xl md:text-7xl lg:text-8xl text-white leading-[1] mb-0">
+                Дорогая
+              </h1>
+              <h1 className="font-display italic font-bold text-6xl md:text-7xl lg:text-8xl text-[hsl(280,30%,12%)] leading-[1] mb-6">
+                принцесса
+              </h1>
+
+              <p className="text-white/85 font-body text-lg md:text-xl max-w-xl mb-2 leading-relaxed">
+                Аффирмации, молитвы и практики для тех, кто ищет покой, силу и радость
+              </p>
+              <div className="text-[hsl(330,75%,78%)] text-2xl tracking-widest mb-8">〰〰〰〰〰〰</div>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-full bg-[hsl(280,30%,12%)] hover:bg-[hsl(280,30%,20%)] text-white font-extrabold uppercase tracking-wide px-8 shadow-[4px_4px_0px_hsl(330,75%,78%)] border-2 border-[hsl(280,30%,12%)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform"
+                >
+                  <Link to="/affirmations">Начать практику ✦</Link>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="rounded-full bg-white border-2 border-[hsl(280,30%,12%)] text-[hsl(280,30%,12%)] font-extrabold uppercase tracking-wide px-8 hover:bg-[hsl(54,95%,58%)] shadow-[4px_4px_0px_hsl(280,30%,12%)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform"
+                  onClick={() => setContactOpen(true)}
+                >
+                  Написать нам
+                </Button>
+              </div>
             </div>
 
-            <h1 className="font-display font-black text-5xl md:text-7xl lg:text-8xl text-white leading-[0.9] uppercase mb-2">
-              Дорогая
-            </h1>
-            <h1 className="font-display font-black text-5xl md:text-7xl lg:text-8xl text-[hsl(280,30%,12%)] leading-[0.9] uppercase mb-6">
-              принцесса
-            </h1>
-
-            <p className="text-white/80 font-body text-lg md:text-xl max-w-xl mb-2 leading-relaxed">
-              Аффирмации, молитвы и практики для тех, кто ищет покой, силу и радость
-            </p>
-            <div className="text-[hsl(330,75%,78%)] text-2xl tracking-widest mb-8">〰〰〰〰〰〰</div>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Button
-                asChild
-                size="lg"
-                className="rounded-full bg-[hsl(280,30%,12%)] hover:bg-[hsl(280,30%,20%)] text-white font-extrabold uppercase tracking-wide px-8 shadow-[4px_4px_0px_hsl(330,75%,78%)] border-2 border-[hsl(280,30%,12%)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform"
-              >
-                <Link to="/affirmations">Начать практику ✦</Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="rounded-full bg-white border-2 border-[hsl(280,30%,12%)] text-[hsl(280,30%,12%)] font-extrabold uppercase tracking-wide px-8 hover:bg-[hsl(54,95%,58%)] shadow-[4px_4px_0px_hsl(280,30%,12%)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform"
-                onClick={() => setContactOpen(true)}
-              >
-                Написать нам
-              </Button>
+            {/* Flower-shaped photos */}
+            <div className="relative flex items-center justify-center h-[420px]">
+              {/* Main big flower photo */}
+              <div className="absolute w-64 h-64 border-[3px] border-[hsl(280,30%,12%)] shadow-[6px_6px_0px_hsl(280,30%,12%)] overflow-hidden"
+                style={{ borderRadius: "60% 40% 60% 40% / 40% 60% 40% 60%", top: "20px", left: "50%", transform: "translateX(-50%)" }}>
+                <img
+                  src="https://cdn.poehali.dev/projects/4cf41188-5395-41e4-8d67-7a5eb0b6447f/files/bd432525-5f14-4d95-8436-f64841c32a94.jpg"
+                  alt="Медитация"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Small flower photo left */}
+              <div className="absolute w-36 h-36 border-[3px] border-[hsl(280,30%,12%)] shadow-[4px_4px_0px_hsl(280,30%,12%)] overflow-hidden"
+                style={{ borderRadius: "40% 60% 40% 60% / 60% 40% 60% 40%", bottom: "30px", left: "4%", transform: "rotate(-8deg)" }}>
+                <img
+                  src="https://cdn.poehali.dev/projects/4cf41188-5395-41e4-8d67-7a5eb0b6447f/files/2f978bf9-89e0-4134-bf19-2bb51af259be.jpg"
+                  alt="Цветы"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Small flower photo right */}
+              <div className="absolute w-40 h-40 border-[3px] border-[hsl(280,30%,12%)] shadow-[4px_4px_0px_hsl(280,30%,12%)] overflow-hidden"
+                style={{ borderRadius: "50% 50% 40% 60% / 40% 60% 50% 50%", bottom: "20px", right: "0%", transform: "rotate(6deg)" }}>
+                <img
+                  src="https://cdn.poehali.dev/projects/4cf41188-5395-41e4-8d67-7a5eb0b6447f/files/37a2ff7c-a794-49a5-ad65-c28968b6656f.jpg"
+                  alt="Утренний ритуал"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Deco dot */}
+              <Dot size={20} color="#FAEF5D" className="absolute top-2 right-6" />
+              <Sparkle size={28} color="white" className="absolute bottom-4 left-1/2 opacity-60 float" />
             </div>
           </div>
         </div>
@@ -204,7 +241,7 @@ export default function Index() {
         <Dot size={14} color="#FAEF5D" className="absolute bottom-12 right-20 opacity-40" />
         <div className="max-w-6xl mx-auto relative">
           <div className="text-center mb-12">
-            <h2 className="font-display font-black text-3xl md:text-5xl text-[hsl(280,30%,12%)] uppercase mb-2">
+            <h2 className="font-display italic font-bold text-4xl md:text-6xl text-[hsl(280,30%,12%)] mb-2">
               Что вас ждёт
             </h2>
             <div className="text-[hsl(275,52%,75%)] text-xl tracking-widest">〰〰〰〰〰〰〰</div>
@@ -225,7 +262,7 @@ export default function Index() {
                 <div className="text-5xl font-black mb-4 opacity-30 group-hover:opacity-60 transition-opacity">
                   {s.icon}
                 </div>
-                <h3 className="font-display font-black text-2xl uppercase leading-tight mb-3 whitespace-pre-line">
+                <h3 className="font-display italic font-bold text-3xl leading-tight mb-3 whitespace-pre-line">
                   {s.title}
                 </h3>
                 <p className="font-body text-sm leading-relaxed opacity-80 mb-4">{s.desc}</p>
@@ -246,7 +283,7 @@ export default function Index() {
         <div className="max-w-6xl mx-auto relative">
           <div className="flex items-end justify-between mb-10">
             <div>
-              <h2 className="font-display font-black text-3xl md:text-4xl text-[hsl(280,30%,12%)] uppercase">
+              <h2 className="font-display italic font-bold text-4xl md:text-5xl text-[hsl(280,30%,12%)]">
                 Из блога
               </h2>
               <div className="text-[hsl(330,75%,78%)] text-xl tracking-widest">〰〰〰〰〰〰〰</div>
@@ -269,7 +306,7 @@ export default function Index() {
                 <span className={`${post.tagBg} text-[hsl(280,30%,12%)] text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border-2 border-[hsl(280,30%,12%)] inline-block mb-4`}>
                   {post.tag}
                 </span>
-                <h3 className="font-display font-black text-base text-[hsl(280,30%,12%)] uppercase leading-tight mb-2 group-hover:text-[hsl(275,52%,75%)] transition-colors">
+                <h3 className="font-display italic font-bold text-xl text-[hsl(280,30%,12%)] leading-tight mb-2 group-hover:text-[hsl(275,52%,75%)] transition-colors">
                   {post.title}
                 </h3>
                 <p className="font-body text-sm text-[hsl(275,15%,50%)] leading-relaxed mb-4">{post.excerpt}</p>
@@ -295,7 +332,7 @@ export default function Index() {
             <p className="font-display font-black text-xs uppercase tracking-[0.2em] text-[hsl(275,52%,75%)] mb-3">
               ✦ Начни прямо сейчас ✦
             </p>
-            <h2 className="font-display font-black text-3xl md:text-4xl text-[hsl(280,30%,12%)] uppercase leading-tight mb-4">
+            <h2 className="font-display italic font-bold text-4xl md:text-5xl text-[hsl(280,30%,12%)] leading-tight mb-4">
               Готова начать<br />свой путь?
             </h2>
             <p className="font-body text-[hsl(275,15%,50%)] mb-8 max-w-sm mx-auto leading-relaxed">

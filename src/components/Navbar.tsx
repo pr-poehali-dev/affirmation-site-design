@@ -28,7 +28,7 @@ export default function Navbar() {
               <Sparkle size={14} color="#FAEF5D" className="absolute -top-1 -right-1" />
             </div>
             <div className="leading-tight">
-              <span className="font-display font-black text-sm uppercase tracking-tight text-[hsl(280,30%,12%)] block">
+              <span className="font-display italic font-bold text-lg text-[hsl(280,30%,12%)] block leading-none">
                 Дорогая <span className="text-[hsl(275,52%,75%)]">принцесса</span>
               </span>
               <span className="text-[10px] font-body text-[hsl(275,15%,50%)] uppercase tracking-[0.15em] block">Dear Princess</span>
